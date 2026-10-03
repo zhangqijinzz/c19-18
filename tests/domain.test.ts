@@ -19,7 +19,7 @@ describe('layout domain rules', () => {
   });
 
   it('returns a path when entrance and focus area exist', () => {
-    const analysis = analyzeLayout({ version: 1, title: 'x', field: { width: 20, height: 12 }, elements: [{ ...item('entry', 1, 5, 2, 1), kind: 'entrance' }, { ...item('stage', 10, 2, 5, 3), kind: 'stage' }] });
+    const analysis = analyzeLayout({ version: 2, title: 'x', field: { width: 20, height: 12 }, blockedZones: [], elements: [{ ...item('entry', 1, 5, 2, 1), kind: 'entrance' }, { ...item('stage', 10, 2, 5, 3), kind: 'stage' }] });
     expect(analysis.path?.points).toHaveLength(3);
     expect(analysis.path?.distance).toBeGreaterThan(0);
   });
